@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall -Wextra
+CXXFLAGS = -std=c++14 -Wall -Wextra
 
 TARGET = main
 TEST_TARGETS = runAutobotTests runDecepticonTests runShieldTests runTransformerTests runWeaponTests
@@ -67,3 +67,4 @@ clean:
               $(TRANSFORMER_TEST_OBJS) $(WEAPON_TEST_OBJS) $(TEST_TARGETS)
 
 .PHONY: all clean test
+
