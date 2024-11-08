@@ -2,12 +2,13 @@
 #include "Transformer.h"
 #include "Weapon.h"
 #include "Shield.h"
+#include "Autobot.h"
+#include "Decepticon.h"
 
 // Тестовая фикстура для Transformer
 class TransformerTest : public ::testing::Test {
 protected:
     void SetUp() override {
-        // Настройка тестовых данных
         weapon = Weapon("Laser", 50);
         shield = Shield(100);
         transformer1 = Transformer("Optimus", 5, 100, 300, 50, 10, weapon, shield);
@@ -79,7 +80,43 @@ TEST_F(TransformerTest, TestTurn) {
     EXPECT_TRUE(transformer1.turn(Direction::LEFT));
 }
 
+// Тесты для Autobot и Decepticon
+TEST(AutobotTest, Initialization) {
+    Weapon weapon("Laser", 40);
+    Shield shield(100);
+    Autobot autobot("Optimus", 1, 50, 10, 100, 10, weapon, shield, "Autobot");
+
+    EXPECT_EQ(autobot.getFaction(), "Autobot");
+}
+
+TEST(DecepticonTest, Initialization) {
+    Weapon weapon("Cannon", 60);
+    Shield shield(150);
+    Decepticon decepticon("Megatron", 2, 70, 15, 80, 5, weapon, shield, "Decepticon");
+
+    EXPECT_EQ(decepticon.getFaction(), "Decepticon");
+}
+
+// Тесты для Shield
+TEST(ShieldTest, Initialization) {
+    Shield shield(100);
+    EXPECT_EQ(shield.getDurability(), 100);
+}
+
+TEST(ShieldTest, DurabilityChange) {
+    Shield shield(50);
+    EXPECT_EQ(shield.getDurability(), 50);
+}
+
+// Тесты для Weapon
+TEST(WeaponTest, Initialization) {
+    Weapon weapon("Laser", 40);
+    EXPECT_EQ(weapon.getType(), "Laser");
+    EXPECT_EQ(weapon.getDamage(), 40);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
+
