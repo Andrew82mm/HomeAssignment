@@ -1,8 +1,12 @@
+/*
+    Andrew Sergienko st135882@student.spbu.ru
+*/
 #include <iostream>
 #include "Shield.h"
 #include "Weapon.h"
 #include "Autobot.h"
 #include "Decepticon.h"
+#include "Microbot.h"
 
 int main() {
     Shield Optimus_shield(100);
@@ -14,7 +18,10 @@ int main() {
     Optimus.turn(Direction::LEFT);
     Optimus.jump();
     Optimus.fire();
+    Optimus.ultimate();
     Optimus.transform();
+    
+    std::cout << std::endl;
 
     Shield Megatron_shield(120);
     Weapon Megatron_Gun("M4A4", 10); 
@@ -26,6 +33,22 @@ int main() {
     Megatron.jump();
     Megatron.fire();
     Megatron.ultimate();
-
+    Megatron.transform();
+    
+    std::cout << std::endl;
+    
+    Shield Micron_shield(50);
+    Weapon Micron_Gun("AK-47", 12); 
+    Microbot Micron("Micron", 4, 22, 30, 20, 50, Micron_Gun, Micron_shield, "Microbot"); 
+    
+    Micron.get_full_info();
+    Micron.move();
+    Micron.turn(Direction::BACKWARD);
+    Micron.jump();
+    Micron.fire();
+    Micron.ultimate();
+    Micron.transform();
+    
     return 0;
 }
+

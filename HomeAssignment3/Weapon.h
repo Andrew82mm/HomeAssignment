@@ -1,3 +1,6 @@
+/*
+    Andrew Sergienko st135882@student.spbu.ru
+*/
 #ifndef WEAPON_H
 #define WEAPON_H
 

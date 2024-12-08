@@ -1,16 +1,53 @@
-Task #3 Sergienko Andrey b82 group 
+**Task #3**  
+**Sergienko Andrey**  
+**Group**: b82  
+**Email**:  
+- Personal: andryman1024@gmail.com  
+- University: st135882@student.spbu.ru  
 
-Mail: 
-Personal - andryman1024@gmail.com 
-University - st135882@student.spbu.ru 
+---
 
-To run the project normally, you need to enter make to build. Then ./main to run it. 
+### Program Overview:
+This program demonstrates working with classes in Object Oriented Programming.
 
-To run the project in unit testing mode, you need to enter make test. After assembly, programs for testing each class will appear.
-./runAutobotTests for testing Autobot class
-./runDecepticonTests for testing Decepticon class
-./runShieldTests for testing Shield class
-./runTransformerTests for testing Transformer class
-./runWeaponTests for testing Weapon class
+---
 
-After finishing working with the project, enter make clean to clean up the files that appear 
+### How to Use the Program:
+1. **Normal startup**:  
+   Print `make`. After compiling the program with `make`, You will need to run it with ./main.
+   
+2. **Google Class Testing**:  
+   Print `make test`. After compiling the program with `make test`, You will need to run it with ./runTests.
+   
+3. **Clean Up**:  
+   Run `make clean` to remove any temporary files created during execution.
+
+---
+
+### Explanation of How the Program Works:
+1. **Creating classes**:
+    - We create a class Transformer. From which the classes Autobot, Decepticon and Microbot are inherited.
+
+2. **Creating additional classes**:
+    - We also create Weapon, Shield classes and also Direction class.
+    
+3. **Object Oriented Programming Principles in the Program**:
+    - **Inheritance:**
+    The principle of inheritance is used in the Autobot, Decepticon, and Microbot classes, which inherit from the Transformer
+    base class. This allows each of these classes to extend the functionality of the transformer by adding unique methods such as 
+    transform() and ultimate(). They also inherit all the methods and properties of the base class, which allows for code reuse 
+    and reduces code duplication.
+
+    - **Encapsulation:**
+    Encapsulation is the process of hiding the internal state of objects and exposing access to this data through public methods. 
+    In the Transformer class, for example, all internal data (level, power, fuel, ammo, etc.) is encapsulated and can only be 
+    accessed through public methods (e.g. getFuel(), getAmmo(), etc.).
+
+    - **Composition:**
+    The relationship between the Transformer, Weapon, and Shield classes is composition because the Weapon and Shield objects are 
+    part of the Transformer objects and their life depends on the life of the transformer.
+
+    - **Association:**
+    The relationship between the Transformer and Direction classes is association because the Transformer uses the Direction    
+    object in its methods but does not manage its life cycle.
+---

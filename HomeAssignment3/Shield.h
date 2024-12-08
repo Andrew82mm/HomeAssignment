@@ -1,3 +1,6 @@
+/*
+    Andrew Sergienko st135882@student.spbu.ru
+*/
 #ifndef SHIELD_H
 #define SHIELD_H
 

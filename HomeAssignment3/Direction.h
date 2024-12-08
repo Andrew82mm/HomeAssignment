@@ -1,3 +1,6 @@
+/*
+    Andrew Sergienko st135882@student.spbu.ru
+*/
 #ifndef DIRECTION_H
 #define DIRECTION_H
 

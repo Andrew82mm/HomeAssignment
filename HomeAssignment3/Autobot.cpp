@@ -1,3 +1,6 @@
+/*
+    Andrew Sergienko st135882@student.spbu.ru
+*/
 #include "Autobot.h"
 
 Autobot::Autobot(const std::string &name, int level, int strength, int range, int fuel, int ammo, const Weapon &weapon, const Shield &shield, const std::string &faction)
@@ -5,6 +8,9 @@ Autobot::Autobot(const std::string &name, int level, int strength, int range, in
 
 void Autobot::transform() {
     std::cout << "Autobot " << name << " transforms!" << std::endl;
+}
+void Autobot::ultimate() {
+    std::cout << "Autobot " << name << " uses ultimate power!" << std::endl;
 }
 
 std::string Autobot::getFaction() const {

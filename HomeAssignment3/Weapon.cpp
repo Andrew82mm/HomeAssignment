@@ -1,3 +1,6 @@
+/*
+    Andrew Sergienko st135882@student.spbu.ru
+*/
 #include "Weapon.h"
 
 Weapon::Weapon(const std::string& type, int damage) : type(type), damage(damage) {}

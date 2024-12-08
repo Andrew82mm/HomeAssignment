@@ -1,3 +1,6 @@
+/*
+    Andrew Sergienko st135882@student.spbu.ru
+*/
 #include "Transformer.h"
 
 Transformer::Transformer(const std::string &n, int l, int s, int r, int f, int am, const Weapon &w, const Shield &sh)
