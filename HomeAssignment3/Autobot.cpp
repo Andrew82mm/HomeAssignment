@@ -16,3 +16,7 @@ void Autobot::ultimate() {
 std::string Autobot::getFaction() const {
     return faction;
 }
+
+Autobot::~Autobot() {
+    std::cout << "Autobot destructor called for " << name << std::endl;
+}

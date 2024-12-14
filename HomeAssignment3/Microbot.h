@@ -11,6 +11,7 @@ private:
     std::string faction;
 public: 
     Microbot(const std::string &name, int level, int strength, int range, int fuel, int ammo, const Weapon &weapon, const Shield &shield, const std::string &faction);
+    ~Microbot() override;
     void transform();
     void ultimate();
     std::string getFaction() const;

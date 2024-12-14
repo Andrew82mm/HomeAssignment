@@ -17,3 +17,6 @@ std::string Microbot::getFaction() const {
     return faction;
 }
 
+Microbot::~Microbot() {
+    std::cout << "Microbot destructor called for " << name << std::endl;
+}

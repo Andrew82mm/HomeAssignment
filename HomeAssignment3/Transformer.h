@@ -40,6 +40,9 @@ public:
     std::string getInfT() const;
     std::string getInfW() const;
     std::string getInfSh() const;
+    
+    virtual ~Transformer();
+
 };
 
 #endif

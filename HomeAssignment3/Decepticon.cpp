@@ -16,3 +16,7 @@ void Decepticon::ultimate() {
 std::string Decepticon::getFaction() const {
     return faction;
 }
+
+Decepticon::~Decepticon() {
+    std::cout << "Decepticon destructor called for " << name << std::endl;
+}

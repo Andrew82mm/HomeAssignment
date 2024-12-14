@@ -48,6 +48,8 @@ int main() {
     Micron.fire();
     Micron.ultimate();
     Micron.transform();
+
+    std::cout << std::endl;
     
     return 0;
 }

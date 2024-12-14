@@ -106,3 +106,7 @@ std::string Transformer::getInfW() const {
 std::string Transformer::getInfSh() const {
     return "Shield durability: " + std::to_string(shield.getDurability());
 }
+
+Transformer::~Transformer() {
+}
+
