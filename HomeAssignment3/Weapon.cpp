@@ -12,3 +12,5 @@ std::string Weapon::getType() const {
 int Weapon::getDamage() const {
     return damage;
 }
+
+Weapon::~Weapon() {}

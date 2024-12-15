@@ -10,6 +10,7 @@ private:
 public:
     Shield(int durability);
     int getDurability() const;
+    ~Shield();
 };
 
 #endif

@@ -14,6 +14,7 @@ public:
     Weapon(const std::string& type, int damage);
     std::string getType() const;
     int getDamage() const;
+    ~Weapon();
 };
 
 #endif
