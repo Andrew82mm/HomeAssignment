@@ -9,12 +9,16 @@
 class Decepticon : public Transformer {
 private:
     std::string faction;
+    float weight;
+    float height;
 public: 
-    Decepticon(const std::string &name, int level, int strength, int range, int fuel, int ammo, const Weapon &weapon, const Shield &shield, const std::string &faction);
+    Decepticon(const std::string &name, int level, int strength, int range, int fuel, int ammo, const Weapon &weapon, const Shield &shield, const std::string &faction, float weight, float height);
     ~Decepticon() override;
     void transform();
     void ultimate();
     std::string getFaction() const;
+    float getWeight() const;
+    float getHeight() const;
 };
 
 #endif

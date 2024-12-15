@@ -37,6 +37,7 @@ TEST(TransformerTest, SetDataTest) {
     transformer.set_dataT(20, 600, 250, 120, 60);
     transformer.set_dataW("Plasma Cannon", 80);
     transformer.set_dataSh(120);
+    
     EXPECT_EQ(transformer.getInfT(), "Transformer name: Optimus; Level: 20; Strength: 600; Range: 250; Fuel: 120; Ammo: 60");
     EXPECT_EQ(transformer.getInfW(), "Weapon name: Plasma Cannon; Damage: 80");
     EXPECT_EQ(transformer.getInfSh(), "Shield durability: 120");
@@ -88,17 +89,19 @@ TEST(TransformerTest, FireTest) {
 TEST(AutobotTest, ConstructorTest) {
     Weapon weapon("Plasma Cannon", 80);
     Shield shield(120);
-    Autobot autobot("Optimus Prime", 50, 1000, 300, 200, 100, weapon, shield, "Autobots");
+    Autobot autobot("Optimus Prime", 50, 1000, 300, 200, 100, weapon, shield, "Autobots", 250.5, 8.0);
     EXPECT_EQ(autobot.getInfT(), "Transformer name: Optimus Prime; Level: 50; Strength: 1000; Range: 300; Fuel: 200; Ammo: 100");
     EXPECT_EQ(autobot.getInfW(), "Weapon name: Plasma Cannon; Damage: 80");
     EXPECT_EQ(autobot.getInfSh(), "Shield durability: 120");
     EXPECT_EQ(autobot.getFaction(), "Autobots");
+    EXPECT_EQ(autobot.getWeight(), 250.5);
+    EXPECT_EQ(autobot.getHeight(), 8.0);
 }
 
 TEST(AutobotTest, TransformTest) {
     Weapon weapon("Plasma Cannon", 80);
     Shield shield(120);
-    Autobot autobot("Optimus Prime", 50, 1000, 300, 200, 100, weapon, shield, "Autobots");
+    Autobot autobot("Optimus Prime", 50, 1000, 300, 200, 100, weapon, shield, "Autobots", 250.5, 8.0);
     testing::internal::CaptureStdout();
     autobot.transform();
     std::string output = testing::internal::GetCapturedStdout();
@@ -108,7 +111,7 @@ TEST(AutobotTest, TransformTest) {
 TEST(AutobotTest, UltimateTest) {
     Weapon weapon("Plasma Cannon", 80);
     Shield shield(120);
-    Autobot autobot("Optimus Prime", 50, 1000, 300, 200, 100, weapon, shield, "Autobots");
+    Autobot autobot("Optimus Prime", 50, 1000, 300, 200, 100, weapon, shield, "Autobots", 250.5, 8.0);
     testing::internal::CaptureStdout();
     autobot.ultimate();
     std::string output = testing::internal::GetCapturedStdout();
@@ -118,24 +121,26 @@ TEST(AutobotTest, UltimateTest) {
 TEST(AutobotTest, GetFactionTest) {
     Weapon weapon("Plasma Cannon", 80);
     Shield shield(120);
-    Autobot autobot("Optimus Prime", 50, 1000, 300, 200, 100, weapon, shield, "Autobots");
+    Autobot autobot("Optimus Prime", 50, 1000, 300, 200, 100, weapon, shield, "Autobots", 250.5, 8.0);
     EXPECT_EQ(autobot.getFaction(), "Autobots");
 }
 
 TEST(DecepticonTest, ConstructorTest) {
     Weapon weapon("Fusion Cannon", 100);
     Shield shield(150);
-    Decepticon decepticon("Megatron", 60, 1200, 400, 250, 150, weapon, shield, "Decepticons");
+    Decepticon decepticon("Megatron", 60, 1200, 400, 250, 150, weapon, shield, "Decepticons", 300.0, 9.0);
     EXPECT_EQ(decepticon.getInfT(), "Transformer name: Megatron; Level: 60; Strength: 1200; Range: 400; Fuel: 250; Ammo: 150");
     EXPECT_EQ(decepticon.getInfW(), "Weapon name: Fusion Cannon; Damage: 100");
     EXPECT_EQ(decepticon.getInfSh(), "Shield durability: 150");
     EXPECT_EQ(decepticon.getFaction(), "Decepticons");
+    EXPECT_EQ(decepticon.getWeight(), 300.0);
+    EXPECT_EQ(decepticon.getHeight(), 9.0);
 }
 
 TEST(DecepticonTest, TransformTest) {
     Weapon weapon("Fusion Cannon", 100);
     Shield shield(150);
-    Decepticon decepticon("Megatron", 60, 1200, 400, 250, 150, weapon, shield, "Decepticons");
+    Decepticon decepticon("Megatron", 60, 1200, 400, 250, 150, weapon, shield, "Decepticons", 300.0, 9.0);
     testing::internal::CaptureStdout();
     decepticon.transform();
     std::string output = testing::internal::GetCapturedStdout();
@@ -145,7 +150,7 @@ TEST(DecepticonTest, TransformTest) {
 TEST(DecepticonTest, UltimateTest) {
     Weapon weapon("Fusion Cannon", 100);
     Shield shield(150);
-    Decepticon decepticon("Megatron", 60, 1200, 400, 250, 150, weapon, shield, "Decepticons");
+    Decepticon decepticon("Megatron", 60, 1200, 400, 250, 150, weapon, shield, "Decepticons", 300.0, 9.0);
     testing::internal::CaptureStdout();
     decepticon.ultimate();
     std::string output = testing::internal::GetCapturedStdout();
@@ -155,24 +160,26 @@ TEST(DecepticonTest, UltimateTest) {
 TEST(DecepticonTest, GetFactionTest) {
     Weapon weapon("Fusion Cannon", 100);
     Shield shield(150);
-    Decepticon decepticon("Megatron", 60, 1200, 400, 250, 150, weapon, shield, "Decepticons");
+    Decepticon decepticon("Megatron", 60, 1200, 400, 250, 150, weapon, shield, "Decepticons", 300.0, 9.0);
     EXPECT_EQ(decepticon.getFaction(), "Decepticons");
 }
 
 TEST(MicrobotTest, ConstructorTest) {
     Weapon weapon("Plasma Gun", 75);
     Shield shield(100);
-    Microbot microbot("Micron", 45, 800, 250, 200, 100, weapon, shield, "Microbots");
+    Microbot microbot("Micron", 45, 800, 250, 200, 100, weapon, shield, "Microbots", 150.0, 5.5);
     EXPECT_EQ(microbot.getInfT(), "Transformer name: Micron; Level: 45; Strength: 800; Range: 250; Fuel: 200; Ammo: 100");
     EXPECT_EQ(microbot.getInfW(), "Weapon name: Plasma Gun; Damage: 75");
     EXPECT_EQ(microbot.getInfSh(), "Shield durability: 100");
     EXPECT_EQ(microbot.getFaction(), "Microbots");
+    EXPECT_EQ(microbot.getWeight(), 150.0);
+    EXPECT_EQ(microbot.getHeight(), 5.5);
 }
 
 TEST(MicrobotTest, TransformTest) {
     Weapon weapon("Plasma Gun", 75);
     Shield shield(100);
-    Microbot microbot("Micron", 45, 800, 250, 200, 100, weapon, shield, "Microbots");
+    Microbot microbot("Micron", 45, 800, 250, 200, 100, weapon, shield, "Microbots", 150.0, 5.5);
     testing::internal::CaptureStdout();
     microbot.transform();
     std::string output = testing::internal::GetCapturedStdout();
@@ -182,7 +189,7 @@ TEST(MicrobotTest, TransformTest) {
 TEST(MicrobotTest, UltimateTest) {
     Weapon weapon("Plasma Gun", 75);
     Shield shield(100);
-    Microbot microbot("Micron", 45, 800, 250, 200, 100, weapon, shield, "Microbots");
+    Microbot microbot("Micron", 45, 800, 250, 200, 100, weapon, shield, "Microbots", 150.0, 5.5);
     testing::internal::CaptureStdout();
     microbot.ultimate();
     std::string output = testing::internal::GetCapturedStdout();
@@ -192,7 +199,7 @@ TEST(MicrobotTest, UltimateTest) {
 TEST(MicrobotTest, GetFactionTest) {
     Weapon weapon("Plasma Gun", 75);
     Shield shield(100);
-    Microbot microbot("Bumblebee", 45, 800, 250, 200, 100, weapon, shield, "Microbots");
+    Microbot microbot("Bumblebee", 45, 800, 250, 200, 100, weapon, shield, "Microbots", 150.0, 5.5);
     EXPECT_EQ(microbot.getFaction(), "Microbots");
 }
 
