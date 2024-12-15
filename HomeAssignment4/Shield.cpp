@@ -1,9 +1,12 @@
+/*
+    Andrew Sergienko st135882@student.spbu.ru
+*/
 #include "Shield.h"
 
 Shield::Shield(int durability) : durability(durability) {}
-Shield::Shield() {}
 
-
-int Shield::getDurability() const {
+int Shield::getDurability() const
+{
     return durability;
 }
+Shield::~Shield() {}

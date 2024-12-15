@@ -1,16 +1,40 @@
+/*
+    Andrew Sergienko st135882@student.spbu.ru
+*/
 #ifndef AUTOBOT_H
 #define AUTOBOT_H
 
 #include "Transformer.h"
+#include <string>
 
-class Autobot : public Transformer {
+class Autobot : public Transformer
+{
+protected:
+    unsigned int strength;
 private:
     std::string faction;
+    float weight;
+    float height;
+
 public:
-    Autobot(const std::string &name, int level, int strength, int range, int fuel, int ammo, const Weapon &weapon, const Shield &shield, const std::string &faction);
+    Autobot(const std::string &name, int level, int strength, int range, int fuel, int ammo,
+            const Weapon &weapon, const Shield &shield, const std::string &faction,
+            float weight, float height);
+
     void transform();
+    void ultimate();
     std::string getFaction() const;
-    std::string getName() const;
+    float getWeight() const;
+    float getHeight() const;
+
+    ~Autobot();
+
+    bool operator==(const Autobot &other) const;
+    bool operator!=(const Autobot &other) const;
+    bool operator<(const Autobot &other) const;
+    bool operator>(const Autobot &other) const;
+    bool operator<=(const Autobot &other) const;
+    bool operator>=(const Autobot &other) const;
 };
 
 #endif

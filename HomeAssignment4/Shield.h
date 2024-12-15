@@ -1,13 +1,17 @@
+/*
+    Andrew Sergienko st135882@student.spbu.ru
+*/
 #ifndef SHIELD_H
 #define SHIELD_H
 
-class Shield {
+class Shield
+{
 private:
     int durability;
 public:
-    Shield();
     Shield(int durability);
     int getDurability() const;
+    ~Shield();
 };
 
 #endif

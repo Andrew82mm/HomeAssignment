@@ -1,15 +1,71 @@
+/*
+    Andrew Sergienko st135882@student.spbu.ru
+*/
 #include "Decepticon.h"
 
-Decepticon::Decepticon(const std::string &name, int level, int strength, int range, int fuel, int ammo, const Weapon &weapon, const Shield &shield, const std::string &faction)
-    : Transformer(name, level, strength, range, fuel, ammo, weapon, shield), faction(faction) {}
+Decepticon::Decepticon(const std::string &name, int level, int strength, int range, int fuel, int ammo,
+                       const Weapon &weapon, const Shield &shield, const std::string &faction,
+                       float weight, float height)
+    : Transformer(name, level, strength, range, fuel, ammo, weapon, shield),
+      faction(faction), weight(weight), height(height) {}
 
-void Decepticon::ultimate() {
+void Decepticon::transform()
+{
+    std::cout << "Decepticon " << name << " transforms!" << std::endl;
+}
+
+void Decepticon::ultimate()
+{
     std::cout << "Decepticon " << name << " uses ultimate power!" << std::endl;
 }
 
-std::string Decepticon::getFaction() const {
+std::string Decepticon::getFaction() const
+{
     return faction;
 }
-std::string Decepticon::getName() const {
-    return name;
+
+float Decepticon::getWeight() const
+{
+    return weight;
 }
+
+float Decepticon::getHeight() const
+{
+    return height;
+}
+
+Decepticon::~Decepticon()
+{
+    std::cout << "Decepticon destructor called for " << name << std::endl;
+}
+
+bool Decepticon::operator==(const Decepticon &other) const
+{
+    return name == other.name && weight == other.weight && height == other.height && faction == other.faction;
+}
+
+bool Decepticon::operator!=(const Decepticon &other) const
+{
+    return !(*this == other);
+}
+
+bool Decepticon::operator<(const Decepticon &other) const
+{
+    return strength < other.strength;
+}
+
+bool Decepticon::operator>(const Decepticon &other) const
+{
+    return strength > other.strength;
+}
+
+bool Decepticon::operator<=(const Decepticon &other) const
+{
+    return !(*this > other);
+}
+
+bool Decepticon::operator>=(const Decepticon &other) const
+{
+    return !(*this < other);
+}
+
