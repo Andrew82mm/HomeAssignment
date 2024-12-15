@@ -1,5 +1,3 @@
----
-
 **Task #4**  
 **Sergienko Andrey**  
 **Group**: b82  
