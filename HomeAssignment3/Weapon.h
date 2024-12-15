@@ -6,7 +6,8 @@
 
 #include <string>
 
-class Weapon {
+class Weapon
+{
 private:
     std::string type;
     int damage;

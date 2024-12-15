@@ -6,12 +6,13 @@
 
 #include "Transformer.h"
 
-class Decepticon : public Transformer {
+class Decepticon : public Transformer
+{
 private:
     std::string faction;
     float weight;
     float height;
-public: 
+public:
     Decepticon(const std::string &name, int level, int strength, int range, int fuel, int ammo, const Weapon &weapon, const Shield &shield, const std::string &faction, float weight, float height);
     ~Decepticon() override;
     void transform();

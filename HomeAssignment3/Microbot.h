@@ -6,12 +6,13 @@
 
 #include "Transformer.h"
 
-class Microbot : public Transformer {
+class Microbot : public Transformer
+{
 private:
     std::string faction;
     float weight;
     float height;
-public: 
+public:
     Microbot(const std::string &name, int level, int strength, int range, int fuel, int ammo, const Weapon &weapon, const Shield &shield, const std::string &faction, float weight, float height);
     ~Microbot() override;
     void transform();

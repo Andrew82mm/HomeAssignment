@@ -7,7 +7,8 @@
 #include "Transformer.h"
 #include <string>
 
-class Autobot : public Transformer {
+class Autobot : public Transformer
+{
 private:
     std::string faction;
     float weight;
