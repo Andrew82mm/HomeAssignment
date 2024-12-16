@@ -10,7 +10,8 @@
 #include "Shield.h"
 #include "Weapon.h"
 
-class Transformer {
+class Transformer
+{
 protected:
     std::string name;
 private:
@@ -19,28 +20,22 @@ private:
     unsigned int range;
     unsigned int fuel;
     unsigned int ammo;
-    Weapon weapon;
-    Shield shield;
+    Direction direction;
 public:
-    Transformer(const std::string &n, int l, int s, int r, int f, int am, const Weapon &w, const Shield &sh);
+    Transformer(const std::string &n, int l, int s, int r, int f, int am);
     void set_dataT(int l, int s, int r, int f, int am);
-    void set_dataW(const std::string& weaponName, int weaponDamage);
-    void set_dataSh(int shielddurability);
+    void set_direction(Direction dir);
     void get_infT() const;
-    void get_infW() const;
-    void get_infSh() const;
-    void get_full_info() const;
+    void get_full_info(const Weapon &w, const Shield &sh) const;
     bool move();
     bool turn(Direction dir);
     bool jump();
-    bool fire();
+    bool fire(const Weapon &w);
 
     unsigned int getFuel() const;
     unsigned int getAmmo() const;
     std::string getInfT() const;
-    std::string getInfW() const;
-    std::string getInfSh() const;
-    
+
     virtual ~Transformer();
 
 };

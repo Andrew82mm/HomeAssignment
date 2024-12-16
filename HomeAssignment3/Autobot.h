@@ -16,7 +16,7 @@ private:
 
 public:
     Autobot(const std::string &name, int level, int strength, int range, int fuel, int ammo,
-            const Weapon &weapon, const Shield &shield, const std::string &faction,
+            const std::string &faction,
             float weight, float height);
 
     void transform();

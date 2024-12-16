@@ -13,7 +13,7 @@ private:
     float weight;
     float height;
 public:
-    Microbot(const std::string &name, int level, int strength, int range, int fuel, int ammo, const Weapon &weapon, const Shield &shield, const std::string &faction, float weight, float height);
+    Microbot(const std::string &name, int level, int strength, int range, int fuel, int ammo, const std::string &faction, float weight, float height);
     ~Microbot() override;
     void transform();
     void ultimate();

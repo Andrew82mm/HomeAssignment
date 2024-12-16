@@ -25,12 +25,6 @@ This program demonstrates working with classes in Object Oriented Programming.
 ---
 
 ### Explanation of How the Program Works:
-1. **Creating classes**:
-    - We create a class Transformer. From which the classes Autobot, Decepticon and Microbot are inherited.
-
-2. **Creating additional classes**:
-    - We also create Weapon, Shield classes and also Direction class.
-    
 3. **Object Oriented Programming Principles in the Program**:
     - **Inheritance:**
     The principle of inheritance is used in the Autobot, Decepticon, and Microbot classes, which inherit from the Transformer
@@ -44,10 +38,10 @@ This program demonstrates working with classes in Object Oriented Programming.
     accessed through public methods (e.g. getFuel(), getAmmo(), etc.).
 
     - **Composition:**
-    The relationship between the Transformer, Weapon, and Shield classes is composition because the Weapon and Shield objects are 
-    part of the Transformer objects and their life depends on the life of the transformer.
+    Composition is Direction, this class cannot exist independently. Only in the Transformer class and its derivatives
 
     - **Association:**
-    The relationship between the Transformer and Direction classes is association because the Transformer uses the Direction    
-    object in its methods but does not manage its life cycle.
+    Weapon and Shield objects are associated with Autobot, Decepticon, and Microbot objects. When you create an Autobot,       
+    Decepticon, or Microbot object, you pass in pointers to the Weapon and Shield objects. This is an association because each of 
+    these objects uses or has access to a weapon and shield, but they exist independently of each other.
 ---
