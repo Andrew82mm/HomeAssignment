@@ -4,8 +4,7 @@
 #ifndef SHIELD_H
 #define SHIELD_H
 
-class Shield
-{
+class Shield {
 private:
     int durability;
 public:

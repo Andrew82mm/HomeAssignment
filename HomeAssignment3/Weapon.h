@@ -6,8 +6,7 @@
 
 #include <string>
 
-class Weapon
-{
+class Weapon {
 private:
     std::string type;
     int damage;
@@ -15,6 +14,8 @@ public:
     Weapon(const std::string& type, int damage);
     std::string getType() const;
     int getDamage() const;
+    void setType(const std::string& newType);
+    void setDamage(int newDamage);
     ~Weapon();
 };
 

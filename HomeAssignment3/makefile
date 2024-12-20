@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++14 -Wall -Wextra -Werror -Wpedantic
+CXXFLAGS = -std=c++11 -Wall -Wextra -Werror -Wpedantic
 
 TARGET = main
 TEST_TARGETS = runTests

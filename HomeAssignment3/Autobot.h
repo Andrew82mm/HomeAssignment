@@ -5,27 +5,16 @@
 #define AUTOBOT_H
 
 #include "Transformer.h"
-#include <string>
 
-class Autobot : public Transformer
-{
+class Autobot : public Transformer {
 private:
     std::string faction;
-    float weight;
-    float height;
-
-public:
-    Autobot(const std::string &name, int level, int strength, int range, int fuel, int ammo,
-            const std::string &faction,
-            float weight, float height);
-
+public: 
+    Autobot(const std::string &name, int level, int strength, int range, int fuel, int ammo, Weapon* weapon, const Shield &shield, const std::string &faction);
+    ~Autobot();
     void transform();
     void ultimate();
     std::string getFaction() const;
-    float getWeight() const;
-    float getHeight() const;
-
-    ~Autobot();
 };
 
 #endif

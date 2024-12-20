@@ -5,8 +5,8 @@
 
 Shield::Shield(int durability) : durability(durability) {}
 
-int Shield::getDurability() const
-{
+int Shield::getDurability() const {
     return durability;
 }
+
 Shield::~Shield() {}
